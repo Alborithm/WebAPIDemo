@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAPI", "DemoAPI\DemoAPI.csproj", "{DE6A0C27-7119-4C50-9208-9EE3EE60B02C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMDBConnection", "ITMDBConnection\ITMDBConnection.csproj", "{D73635D8-CBFE-4461-98AE-BD8A7116649F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE6A0C27-7119-4C50-9208-9EE3EE60B02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE6A0C27-7119-4C50-9208-9EE3EE60B02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE6A0C27-7119-4C50-9208-9EE3EE60B02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE6A0C27-7119-4C50-9208-9EE3EE60B02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73635D8-CBFE-4461-98AE-BD8A7116649F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73635D8-CBFE-4461-98AE-BD8A7116649F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73635D8-CBFE-4461-98AE-BD8A7116649F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73635D8-CBFE-4461-98AE-BD8A7116649F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32BF8574-EA6A-404F-A382-67160752B83D}
+	EndGlobalSection
+EndGlobal
