@@ -494,6 +494,42 @@
             <param name="age">We want to know how old they are</param>
             <returns>A list of first names</returns>
         </member>
+        <member name="F:DemoAPI.layout.theme">
+            <summary>
+            Control theme.
+            </summary>
+            <remarks>
+            Campo generado automáticamente.
+            Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+            </remarks>
+        </member>
+        <member name="F:DemoAPI.layout.head">
+            <summary>
+            Control head.
+            </summary>
+            <remarks>
+            Campo generado automáticamente.
+            Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+            </remarks>
+        </member>
+        <member name="F:DemoAPI.layout.form1">
+            <summary>
+            Control form1.
+            </summary>
+            <remarks>
+            Campo generado automáticamente.
+            Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+            </remarks>
+        </member>
+        <member name="F:DemoAPI.layout.ContentPlaceHolder1">
+            <summary>
+            Control ContentPlaceHolder1.
+            </summary>
+            <remarks>
+            Campo generado automáticamente.
+            Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+            </remarks>
+        </member>
         <member name="T:DemoAPI.Models.Person">
             <summary>
             Represents one specific person
