@@ -6429,6 +6429,11 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\maq1.jpg" />
+    <Content Include="img\maq2.jpg" />
+    <Content Include="img\maq3.jpg" />
+    <Content Include="img\maq4.jpg" />
+    <Content Include="img\maq5.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
