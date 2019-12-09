@@ -165,6 +165,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\OeeReport\Disponibility.cs" />
+    <Compile Include="Models\OeeReport\ReportBuilder.cs" />
     <Compile Include="Models\OeeReport\Velocity.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

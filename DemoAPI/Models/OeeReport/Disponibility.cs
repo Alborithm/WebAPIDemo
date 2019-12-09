@@ -11,7 +11,7 @@ namespace DemoAPI.Models.OeeReport
         public int Id { get; set; }
         public int MachineId { get; set; }
         public bool MachinePower { get; set; }
-        public string FailCode { get; set; }
+        public int FailCode { get; set; }
         public string TimeStamp { get; set; }
 
         public static List<Disponibility> GetAllDisponibility()
@@ -60,6 +60,13 @@ namespace DemoAPI.Models.OeeReport
                     });
                 }
             }
+
+            return outputList;
+        }
+
+        public static List<Disponibility> GetRecordsInDateRange(string from, string to)
+        {
+            List<Disponibility> outputList = new List<Disponibility>();
 
             return outputList;
         }

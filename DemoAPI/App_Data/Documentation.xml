@@ -481,6 +481,26 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:DemoAPI.Controllers.OeeController.GetCurrentDisponibility">
+            <summary>
+            Get a list of the last disponibility registers of every operation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DemoAPI.Controllers.OeeController.GetMainViewData">
+            <summary>
+            Get a model to show data for the main view window, every equipment last data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DemoAPI.Controllers.OeeController.GetDisponibilityDateRange(System.String,System.String)">
+            <summary>
+            Get a list of all registers on disponibility from data range specified
+            </summary>
+            <param name="from"> start date in format YYMMDD</param>
+            <param name="to"> finish date in format YYMMDD</param>
+            <returns></returns>
+        </member>
         <member name="T:DemoAPI.Controllers.PeopleController">
             <summary>
             This is where I give you all the information about my people.

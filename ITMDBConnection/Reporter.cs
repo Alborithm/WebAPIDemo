@@ -14,7 +14,9 @@ namespace ITMDBConnection
             DisponibilityList,
             VelocityList,
             QualityList,
-            DisponibilityCurrent
+            DisponibilityCurrent,
+            AllView,
+            GeneralOeeForOneEquipment
         }
 
         private string tableName;
@@ -40,13 +42,17 @@ namespace ITMDBConnection
                     oeeType = new Velocity();
                     break;
                 case Reports.QualityList:
-                    throw new NotImplementedException();
+                    oeeType = new Quality();
+                    break;
+                case Reports.AllView:
+                    oeeType = new AllView();
+                    break;
                 default:
                     throw new NotImplementedException();
             }
 
             tableName = oeeType.GetTableName;
-            columnNames = oeeType.columnNames;
+            columnNames = oeeType.ColumnNames;
         }
 
         private static List<Oee> DataToModel(Reports report, List<List<string>> data)
@@ -64,7 +70,7 @@ namespace ITMDBConnection
                             Id = Int32.Parse(data[0][i]),
                             MachineId = Int32.Parse(data[1][i]),
                             MachinePower = Boolean.Parse(data[2][i]),
-                            FailCode = data[3][i],
+                            FailCode = string.IsNullOrEmpty(data[3][i]) ? 0 : Int32.Parse(data[3][i]),
                             TimeStamp = data[4][i]
                         });
                     }
@@ -83,6 +89,32 @@ namespace ITMDBConnection
                     }
                     break;
                 case Reports.QualityList:
+                    for (int i = 0; i < data[0].Count; i++)
+                    {
+                        outputList.Add(new Quality
+                        {
+                            Id = Int32.Parse(data[0][i]),
+                            MachineId = Int32.Parse(data[1][i]),
+                            QualityDefects = Int32.Parse(data[2][i]),
+                            DefectCode = Int32.Parse(data[3][i]),
+                            EventTime = data[4][i],
+                            TimeUpdated = data[5][i]
+                        });
+                    }
+                    break;
+                case Reports.AllView:
+                    for (int i = 0; i < data[0].Count; i++)
+                    {
+                        outputList.Add(new AllView
+                        {
+                            OperationID = Int32.Parse(data[0][i]),
+                            MachinePower = Boolean.Parse(data[1][i]),
+                            FailCode = string.IsNullOrEmpty(data[2][i]) ? 0 : Int32.Parse(data[2][i]),
+                            ProductionQuantity = Int32.Parse(data[3][i]),
+                            QualityDefects = string.IsNullOrEmpty(data[4][i]) ? 0 : Int32.Parse(data[4][i]),
+                            TimeUpdated = data[5][i]
+                        });
+                    }
                     break;
                 default:
                     break;
@@ -105,12 +137,14 @@ namespace ITMDBConnection
             {
                 case Reports.DisponibilityList:
                 case Reports.VelocityList:
+                case Reports.QualityList:
                     queryString = Query.SelectQuery(reporter.tableName, reporter.columnNames);
                     break;
-                case Reports.QualityList:
-                    throw new NotImplementedException();
                 case Reports.DisponibilityCurrent:
                     queryString = Query.SelectLastRowQuery(reporter.tableName, reporter.columnNames);
+                    break;
+                case Reports.AllView:
+                    queryString = Query.SelectQuery(reporter.tableName, reporter.columnNames);
                     break;
                 default:
                     break;

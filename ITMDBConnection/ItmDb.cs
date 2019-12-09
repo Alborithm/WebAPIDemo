@@ -27,7 +27,7 @@ namespace ITMDBConnection
         private void Initialize()
         {
             server = "localhost";
-            database = "itm_oee_v0.1";
+            database = "itmoee";
             uid = "root";
             password = "ThemuffinMan531";
             string connectionString;

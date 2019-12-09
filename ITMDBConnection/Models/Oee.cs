@@ -12,9 +12,10 @@ namespace ITMDBConnection.Models
         {
             Disponibility,
             Velocity,
-            Quality
+            Quality,
+            AllView
         }
-        public abstract List<string> columnNames
+        public abstract List<string> ColumnNames
         {
             get;
         }
@@ -29,19 +30,19 @@ namespace ITMDBConnection.Models
         public int Id { get; set; }
         public int MachineId { get; set; }
         public bool MachinePower { get; set; }
-        public string FailCode { get; set; }
+        public int FailCode { get; set; }
         public string TimeStamp { get; set; }
 
-        public override List<string> columnNames => new List<string>
+        public override List<string> ColumnNames => new List<string>
                 {
-                    "oee_disponibility_id",
-                    "machine_id",
-                    "oee_disponibility_status",
-                    "fail_dictionary_code",
-                    "oee_disponibility_timestamp"
+                    "id",
+                    "operation_id",
+                    "disponible",
+                    "dictionary_id",
+                    "updated"
                 };
 
-        public override string GetTableName => "oee_disponibility";
+        public override string GetTableName => "disponibility";
     }
 
     public class Velocity : Oee
@@ -52,15 +53,58 @@ namespace ITMDBConnection.Models
         public string ProductionUnit { get; set; }
         public string TimeStamp { get; set; }
 
-        public override List<string> columnNames => new List<string>
+        public override List<string> ColumnNames => new List<string>
                 {
-                    "oee_velocity_id",
-                    "machine_id",
-                    "oee_velocity_quantity",
-                    "oee_velocity_measurement_unit",
-                    "oee_velocity_timestamp"
+                    "id",
+                    "operation_id",
+                    "production",
+                    "unit",
+                    "updated"
                 };
 
-        public override string GetTableName => "oee_velocity";
+        public override string GetTableName => "velocity";
+    }
+
+    public class Quality : Oee
+    {
+        public int Id { get; set; }
+        public int MachineId { get; set; }
+        public int QualityDefects { get; set; }
+        public int DefectCode { get; set; }
+        public string EventTime { get; set; }
+        public string TimeUpdated { get; set; }
+
+        public override List<string> ColumnNames => new List<string>
+                {
+                    "id",
+                    "operation_id",
+                    "defects",
+                    "dictionary_id",
+                    "event_time",
+                    "updated"
+                };
+
+        public override string GetTableName => "quality";
+    }
+
+    public class AllView : Oee
+    {
+        public int OperationID { get; set; }
+        public bool MachinePower { get; set; }
+        public int FailCode { get; set; }
+        public int ProductionQuantity { get; set; }
+        public int QualityDefects { get; set; }
+        public string TimeUpdated { get; set; }
+
+        public override List<string> ColumnNames => new List<string>
+            {
+                "operation_id",
+                "disponible",
+                "dictionary_id",
+                "production",
+                "defects",
+                "last_update",
+            };
+        public override string GetTableName => "actual_disponibility";
     }
 }
