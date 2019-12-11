@@ -6,6 +6,9 @@
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/globalization/globalize.js"></script>
 	<link rel="stylesheet" href="https://www.jqwidgets.com/public/jqwidgets/styles/jqx.arctic.css" type="text/css" />
+	<!-- ================== BEGIN PAGE CSS STYLE ================== -->
+	<link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
+	<!-- ================== END PAGE CSS STYLE ================== -->
 	<style type="text/css">
 		#gaudeOEEValue {
 			background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafafa), color-stop(100%, #f3f3f3));
@@ -38,7 +41,6 @@
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
 	<div class="row">
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
 			<div class="panel panel-inverse text-center align-middle" data-sortable-id="index-1">
@@ -51,7 +53,7 @@
 			</div>
 		</div>
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
-			<div class="panel panel-inverse text-center align-middle bg-inverse" data-sortable-id="index-1">
+			<div class="panel panel-inverse text-center align-middle bg-inverse" data-sortable-id="index-2">
 				<div class="panel-heading">
 					<h4 class="panel-title">Disponibilidad</h4>
 				</div>
@@ -63,7 +65,7 @@
 			</div>
 		</div>
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
-			<div class="panel panel-inverse text-center align-middle bg-inverse" data-sortable-id="index-1">
+			<div class="panel panel-inverse text-center align-middle bg-inverse" data-sortable-id="index-3">
 				<div class="panel-heading">
 					<h4 class="panel-title">Velocidad</h4>
 				</div>
@@ -73,7 +75,7 @@
 			</div>
 		</div>
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
-			<div class="panel panel-inverse text-center align-middle bg-inverse" data-sortable-id="index-1">
+			<div class="panel panel-inverse text-center align-middle bg-inverse" data-sortable-id="index-4">
 				<div class="panel-heading">
 					<h4 class="panel-title">Calidad</h4>
 				</div>
@@ -83,12 +85,39 @@
 			</div>
 		</div>
 	</div>
+	<!-- begin row -->
+	<div class="row">
+		<div class="col">
+			<!-- begin panel -->
+			<div class="panel panel-inverse">
+				<div class="panel-heading">
+					<!--div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div-->
+					<h4 class="panel-title">Avance de Producción</h4>
+				</div>
+				<div class="panel-body">
+					<h4 class="text-center">Nombre Producto / No. Orden: 10000012</h4>
+					<div id="morris-line-chart" class="height-sm"></div>
+				</div>
+			</div>
+			<!-- end panel -->
+		</div>
+	</div>
 
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptFooter" runat="server">
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/globalization/globalize.js"></script>
+
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="../assets/plugins/morris/raphael.min.js"></script>
+	<script src="../assets/plugins/morris/morris.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -179,7 +208,40 @@
 			$('#gaugeCalidad').on('valueChanging', function (e) {
 				$('#gaugeCalidadValue').text(Math.round(e.args.value) + ' %');
 			});
+			handleMorrisLineChart();
 		});
+		function handleMorrisLineChart() {
+			var tax_data = [
+				{ "FechaHr": "2019-12-01 07:00:00", "PzaPlan": 0, "PzaProd": 0, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 08:00:00", "PzaPlan": 500, "PzaProd": 300, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 09:00:00", "PzaPlan": 1000, "PzaProd": 1000, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 10:00:00", "PzaPlan": 1500, "PzaProd": 1600, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 11:00:00", "PzaPlan": 2000, "PzaProd": 2200, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 12:00:00", "PzaPlan": 2500, "PzaProd": 2700, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 13:00:00", "PzaPlan": 3000, "PzaProd": 2900, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 14:00:00", "PzaPlan": 3500, "PzaProd": 3000, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 15:00:00", "PzaPlan": 4000, "PzaProd": 3300, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 16:00:00", "PzaPlan": 4500, "PzaProd": 3400, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 17:00:00", "PzaPlan": 5000, "PzaProd": null, "PzaObj": 5000 },
+				{ "FechaHr": "2019-12-01 18:00:00", "PzaPlan": 5500, "PzaProd": null, "PzaObj": 5000 }
+			];
+			Morris.Line({
+				element: 'morris-line-chart',
+				data: tax_data,
+				xkey: 'FechaHr',
+				ykeys: ['PzaProd', 'PzaPlan', 'PzaObj'],
+				labels: ['Pzas Prodducidas', 'Pzas Planeadas', 'Objetivo'],
+				resize: true,
+				pointSize: 5,
+				lineWidth: 2.5,
+				gridLineColor: [COLOR_GREY_LIGHTER],
+				gridTextFamily: FONT_FAMILY,
+				gridTextColor: FONT_COLOR,
+				gridTextWeight: FONT_WEIGHT,
+				gridTextSize: FONT_SIZE,
+				lineColors: ['#1BE327', '#E3451B', '#2B9DEC']
+			});
+		}
 	</script>
 
 </asp:Content>
