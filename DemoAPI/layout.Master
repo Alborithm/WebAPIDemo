@@ -27,9 +27,12 @@
 	<script src="assets/plugins/pace/pace.js"></script>
 	<!-- ================== END BASE JS ================== -->
 
-	<title></title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 	<asp:ContentPlaceHolder ID="head" runat="server">
 	</asp:ContentPlaceHolder>
+	
+	<title></title>
 </head>
 <body>
 
@@ -154,7 +157,7 @@
 	<!-- end page container -->
 
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+	<!--script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script-->
 	<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 	<script src="assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 	<!--[if lt IE 9]>
@@ -186,6 +189,9 @@
 			App.init();
 		});
 	</script>
+
+	<asp:ContentPlaceHolder ID="ScriptFooter" runat="server">
+	</asp:ContentPlaceHolder>
 
 </body>
 </html>

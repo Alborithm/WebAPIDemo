@@ -185,6 +185,13 @@
     <Compile Include="Models\OeeReport\Disponibility.cs" />
     <Compile Include="Models\OeeReport\Velocity.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="oee-maquina.aspx.cs">
+      <DependentUpon>oee-maquina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oee-maquina.aspx.designer.cs">
+      <DependentUpon>oee-maquina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -6434,6 +6441,7 @@
     <Content Include="img\maq3.jpg" />
     <Content Include="img\maq4.jpg" />
     <Content Include="img\maq5.jpg" />
+    <Content Include="oee-maquina.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

@@ -30,7 +30,9 @@
 				<div class="vertical-box with-grid with-border-top">
 					<!-- begin vertical-box-column -->
 					<div class="horizontal-box-column align-content-center">
-						<img src="img/maq1.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #45b045" width="100%" height="250px" alt="" />
+						<a href="/oee-maquina.aspx">
+							<img src="img/maq1.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #45b045" width="100%" height="250px" alt="" />
+						</a>
 					</div>
 					<!-- end vertical-box-column -->
 					<!-- begin vertical-box-column -->
@@ -292,8 +294,6 @@
 
 	<!-- end row -->
 
-
-
-
-
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ScriptFooter" runat="server">
 </asp:Content>
