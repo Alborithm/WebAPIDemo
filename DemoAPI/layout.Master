@@ -109,7 +109,7 @@
 				<ul class="nav">
 					<li class="nav-header">Menú</li>
 					<li class="has-sub active">
-						<a href="index.html">
+						<a href="dashboard.aspx">
 							<i class="fa fa-th-large"></i>
 							<span>Dashboard</span>
 						</a>

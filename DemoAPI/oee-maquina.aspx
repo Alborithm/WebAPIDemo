@@ -41,6 +41,17 @@
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+	<!-- begin breadcrumb -->
+	<ol class="breadcrumb pull-right">
+		<li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
+		<li class="breadcrumb-item active">Máquina</li>
+	</ol>
+	<!-- end breadcrumb -->
+	<!-- begin page-header -->
+	<h1 class="page-header">Máquina 1 <small>Descripción</small></h1>
+	<!-- end page-header -->
+
 	<div class="row">
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
 			<div class="panel panel-inverse text-center align-middle" data-sortable-id="index-1">
@@ -57,11 +68,8 @@
 				<div class="panel-heading">
 					<h4 class="panel-title">Disponibilidad</h4>
 				</div>
-				<div id="gaudeDisponibilidad" 
-					class="bg-black text-center align-middle" 
-					style="margin: 0 auto;"></div>
-				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeDisponibilidadValue">
-				</div>
+				<div id="gaudeDisponibilidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeDisponibilidadValue"></div>
 			</div>
 		</div>
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
@@ -70,8 +78,7 @@
 					<h4 class="panel-title">Velocidad</h4>
 				</div>
 				<div id="gaudeVelocidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
-				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeVelocidadValue">
-				</div>
+				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeVelocidadValue"></div>
 			</div>
 		</div>
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
@@ -80,8 +87,7 @@
 					<h4 class="panel-title">Calidad</h4>
 				</div>
 				<div id="gaugeCalidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
-				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaugeCalidadValue">
-				</div>
+				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaugeCalidadValue"></div>
 			</div>
 		</div>
 	</div>
@@ -132,7 +138,7 @@
 				ticksMinor: { interval: 1, size: '5%' },
 				ticksMajor: { interval: 10, size: '10%' },
 				width: '100%',
-				//height: '400px',
+				height: '350px',
 				max: 100,
 				labels: { position: 'outside', interval: 10 },
 				pointer: { style: { fill: '#2e79bb' }, width: 5 },
@@ -154,7 +160,7 @@
 				ticksMinor: { interval: 1, size: '5%' },
 				ticksMajor: { interval: 10, size: '10%' },
 				width: '80%',
-				//height: '400px',
+				height: '250px',
 				max: 100,
 				labels: { position: 'outside', interval: 10 },
 				pointer: { style: { fill: '#2e79bb' }, width: 5 },
@@ -176,7 +182,7 @@
 				ticksMinor: { interval: 1, size: '5%' },
 				ticksMajor: { interval: 10, size: '10%' },
 				width: '80%',
-				//height: '400px',
+				height: '250px',
 				max: 100,
 				labels: { position: 'outside', interval: 10 },
 				pointer: { style: { fill: '#2e79bb' }, width: 5 },
@@ -198,7 +204,7 @@
 				ticksMinor: { interval: 1, size: '5%' },
 				ticksMajor: { interval: 10, size: '10%' },
 				width: '80%',
-				//height: '400px',
+				height: '250px',
 				max: 100,
 				labels: { position: 'outside', interval: 10 },
 				pointer: { style: { fill: '#2e79bb' }, width: 5 },
