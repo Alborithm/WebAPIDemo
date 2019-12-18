@@ -34,6 +34,18 @@ namespace ITMDBConnection
             return outputString;
         }
 
+        internal static string SelectQuery(string table, List<string> columns, int id)
+        {
+            string outputString = SelectQuery(table, columns);
+
+            // Removes the ";" at the end
+            outputString = outputString.Remove(outputString.Length - 1, 1);
+
+            outputString += String.Format(" WHERE operation_id = {0};", id);
+
+            return outputString;
+        }
+
         internal static string SelectLastRowQuery(string table, List<string> columns)
         {
             string outputString = "";

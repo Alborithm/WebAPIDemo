@@ -13,7 +13,8 @@ namespace ITMDBConnection.Models
             Disponibility,
             Velocity,
             Quality,
-            AllView
+            AllView,
+            OeeFull
         }
         public abstract List<string> ColumnNames
         {
@@ -79,7 +80,7 @@ namespace ITMDBConnection.Models
                     "id",
                     "operation_id",
                     "defects",
-                    "dictionary_id",
+                    "defect_id",
                     "event_time",
                     "updated"
                 };
@@ -106,5 +107,30 @@ namespace ITMDBConnection.Models
                 "last_update",
             };
         public override string GetTableName => "actual_disponibility";
+    }
+
+    public class OeeFull : Oee
+    {
+        public Disponibility Disponibility { get; set; }
+        public Velocity Velocity { get; set; }
+        public Quality Quality { get; set; }
+
+        public List<Disponibility> DisponibilityList { get; set; }
+        public List<Velocity> VelocityList { get; set; }
+        public List<Quality> QualityList { get; set; }
+
+        public override List<string> ColumnNames
+        {
+            get
+            {
+                List<string> value = new List<string>();
+                value.AddRange(Disponibility.ColumnNames);
+                value.AddRange(Velocity.ColumnNames);
+                value.AddRange(Quality.ColumnNames);
+                return value;
+            }
+        }
+
+        public override string GetTableName => throw new NotImplementedException();
     }
 }

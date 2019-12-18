@@ -481,10 +481,11 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="M:DemoAPI.Controllers.OeeController.GetCurrentDisponibility">
+        <member name="M:DemoAPI.Controllers.OeeController.GetDisponibility(System.Int32)">
             <summary>
-            Get a list of the last disponibility registers of every operation
+            Gets complete list of the equipment given in the parameter
             </summary>
+            <param name="id">Id of the requested operation</param>
             <returns></returns>
         </member>
         <member name="M:DemoAPI.Controllers.OeeController.GetMainViewData">
@@ -513,6 +514,15 @@
             <param name="userId">The unique identifier for this person</param>
             <param name="age">We want to know how old they are</param>
             <returns>A list of first names</returns>
+        </member>
+        <member name="M:DemoAPI.Models.OeeReport.ReportBuilder.VelocityPercentage(System.Int32)">
+            <summary>
+            Gets the velocity percentage, it is done by obtaining the real production from mysql, divide this by the max production
+            which is obtained by giving a known rate on a period of time, this is multiplied by the disponibility percentage in order to
+            get effective velocity at running time.
+            </summary>
+            <param name="id">Operation Id to obtain data</param>
+            <returns>double value in percentage format, shouldn't be higher than 100</returns>
         </member>
         <member name="T:DemoAPI.Models.Person">
             <summary>

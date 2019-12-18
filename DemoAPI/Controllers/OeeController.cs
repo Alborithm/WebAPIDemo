@@ -12,31 +12,32 @@ namespace DemoAPI.Controllers
     public class OeeController : ApiController
     {
         // GET: api/Oee
-        public IEnumerable<Models.OeeReport.Disponibility> Get()
+        public int Get()
         {
-            List<Models.OeeReport.Disponibility> disponibilityList = Models.OeeReport.Disponibility.GetAllDisponibility();
-            return disponibilityList;
+            
+            return 1;
         }
 
         // GET: api/Oee/Disponibility
         [Route("api/Oee/Disponibility")]
         [HttpGet]
-        public IEnumerable<Models.OeeReport.Disponibility> GetDisponibility()
+        public IEnumerable<Disponibility> GetDisponibility()
         {
-            List<Models.OeeReport.Disponibility> disponibilityList = Models.OeeReport.Disponibility.GetAllDisponibility();
+            List<Disponibility> disponibilityList = ReportBuilder.DisponibilityList();
             return disponibilityList;
         }
 
         /// <summary>
-        /// Get a list of the last disponibility registers of every operation
+        /// Gets complete list of the equipment given in the parameter
         /// </summary>
+        /// <param name="id">Id of the requested operation</param>
         /// <returns></returns>
-        // GET: api/Oee/CurrentDisponibility
-        [Route("api/Oee/CurrentDisponibility")]
+        // GET: api/Oee/Disponibility/1
+        [Route("api/Oee/Disponibility/{id=int}")]
         [HttpGet]
-        public IEnumerable<Models.OeeReport.Disponibility> GetCurrentDisponibility()
+        public IEnumerable<Disponibility> GetDisponibility(int id)
         {
-            List<Models.OeeReport.Disponibility> disponibilityList = Models.OeeReport.Disponibility.GetLastRecord();
+            List<Disponibility> disponibilityList = ReportBuilder.DisponibilityList(id);
             return disponibilityList;
         }
 
@@ -61,19 +62,66 @@ namespace DemoAPI.Controllers
         /// <returns></returns>
         [Route("api/Oee/CurrentDisponibility/{from=string}/{to=string}")]
         [HttpGet]
-        public IEnumerable<Models.OeeReport.Disponibility> GetDisponibilityDateRange(string from, string to)
+        public IEnumerable<Disponibility> GetDisponibilityDateRange(string from, string to)
         {
-            List<Models.OeeReport.Disponibility> disponibilityList = Models.OeeReport.Disponibility.GetRecordsInDateRange(from, to);
-            return disponibilityList;
+            //List<Disponibility> disponibilityList = Disponibility.GetRecordsInDateRange(from, to);
+            return new List<Disponibility>();
         }
 
         // GET: api/Oee/Velocity
         [Route("api/Oee/Velocity")]
         [HttpGet]
-        public IEnumerable<Models.OeeReport.Velocity> GetVelocity()
+        public IEnumerable<Velocity> GetVelocity()
         {
-            List<Models.OeeReport.Velocity> VelocityList = Models.OeeReport.Velocity.GetAllVelocity();
+            List<Velocity> VelocityList = ReportBuilder.VelocityList();
             return VelocityList;
+        }
+
+        // GET: api/Oee/Velocity/2
+        [Route("api/Oee/Velocity/{id=int}")]
+        [HttpGet]
+        public IEnumerable<Velocity> GetVelocity(int id)
+        {
+            List<Velocity> VelocityList = ReportBuilder.VelocityList(id);
+            return VelocityList;
+        }
+
+        // GET: api/Oee/Quality
+        [Route("api/Oee/Quality")]
+        [HttpGet]
+        public IEnumerable<Quality> GetQuality()
+        {
+            List<Quality> QualityList = ReportBuilder.QualityList();
+            return QualityList;
+        }
+
+        // GET: api/Oee/Quality/2
+        [Route("api/Oee/Quality/{id=int}")]
+        [HttpGet]
+        public IEnumerable<Quality> GetQuality(int id)
+        {
+            List<Quality> QualityList = ReportBuilder.QualityList(id);
+            return QualityList;
+        }
+
+        // GET: api/Oee/DisponibilityChartData/4
+        [Route("api/Oee/DisponibilityChartData/{id=int}")]
+        [HttpGet]
+        public IEnumerable<KeyValuePair<string, double>> GetDisponibilityChartData(int id)
+        {
+            List<KeyValuePair<string, double>> ChartData = ReportBuilder.DisponibilityChartData(id);
+
+            return ChartData;
+        }
+
+        // GET: api/Oee/VelocityPerncet/1
+        [Route("api/Oee/VelocityPercent/{id=int}")]
+        [HttpGet]
+        public double GetVelocityPercent(int id)
+        {
+            double velocityPercent = ReportBuilder.VelocityPercentage(id);
+
+            return velocityPercent;
         }
 
         // GET: api/Oee/5

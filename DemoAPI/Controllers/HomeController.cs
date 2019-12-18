@@ -26,8 +26,10 @@ namespace DemoAPI.Controllers
         [Route("Home/EquipmentFull/{id=int}")]
         public ActionResult EquipmentFull(int id)
         {
+            ViewBag.Title = "Full View";
+            ViewBag.OperationId = id;
 
-            return View();
+            return View(id);
         }
     }
 }

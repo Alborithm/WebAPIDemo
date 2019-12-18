@@ -164,9 +164,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\OeeReport\Disponibility.cs" />
+    <Compile Include="Models\OeeReport\GraphData.cs" />
     <Compile Include="Models\OeeReport\ReportBuilder.cs" />
-    <Compile Include="Models\OeeReport\Velocity.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -222,6 +221,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\AllEquipment.cshtml" />
+    <Content Include="Views\Home\EquipmentFull.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
