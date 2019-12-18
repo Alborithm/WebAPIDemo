@@ -115,13 +115,13 @@
 						</a>
 					</li>
 					<li class="has-sub active">
-						<a href="index.html">
+						<a href="dashboard.aspx">
 							<i class="fas fa-cubes"></i>
 							<span>Máquinas</span>
 						</a>
 					</li>
 					<li class="has-sub active">
-						<a href="index.html">
+						<a href="dashboard.aspx">
 							<i class="fa fa-cogs"></i>
 							<span>Configuración</span>
 						</a>

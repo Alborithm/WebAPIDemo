@@ -84,7 +84,9 @@
 				<div class="vertical-box with-grid with-border-top">
 					<!-- begin vertical-box-column -->
 					<div class="horizontal-box-column align-content-center">
-						<img src="img/maq2.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #45b045" width="100%" height="250px" alt="" />
+						<a href="/oee-maquina.aspx">
+							<img src="img/maq2.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #45b045" width="100%" height="250px" alt="" />
+						</a>
 					</div>
 					<!-- end vertical-box-column -->
 					<!-- begin vertical-box-column -->
@@ -137,7 +139,9 @@
 				<div class="vertical-box with-grid with-border-top">
 					<!-- begin vertical-box-column -->
 					<div class="horizontal-box-column align-content-center">
-						<img src="img/maq3.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #a93246" width="100%" height="250px" alt="" />
+						<a href="/oee-maquina.aspx">
+							<img src="img/maq3.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #a93246" width="100%" height="250px" alt="" />
+						</a>
 					</div>
 					<!-- end vertical-box-column -->
 					<!-- begin vertical-box-column -->
@@ -190,7 +194,9 @@
 				<div class="vertical-box with-grid with-border-top">
 					<!-- begin vertical-box-column -->
 					<div class="horizontal-box-column align-content-center">
-						<img src="img/maq4.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #45b045" width="100%" height="250px" alt="" />
+						<a href="/oee-maquina.aspx">
+							<img src="img/maq4.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #45b045" width="100%" height="250px" alt="" />
+						</a>
 					</div>
 					<!-- end vertical-box-column -->
 					<!-- begin vertical-box-column -->
@@ -249,7 +255,9 @@
 				<div class="vertical-box with-grid with-border-top">
 					<!-- begin vertical-box-column -->
 					<div class="horizontal-box-column align-content-center">
-						<img src="img/maq5.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #f59c1a" width="100%" height="250px" alt="" />
+						<a href="/oee-maquina.aspx">
+							<img src="img/maq5.jpg" class="media-object align-content-center" style="margin: 0 auto; border: 5px solid #f59c1a" width="100%" height="250px" alt="" />
+						</a>
 					</div>
 					<!-- end vertical-box-column -->
 					<!-- begin vertical-box-column -->

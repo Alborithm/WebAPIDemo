@@ -49,13 +49,13 @@
 							<div class="row">
 								<div class="col col-sm-12 col-md-4">
 									<div class="form-group row align-middle">
-										<label class="col-md-4 col-form-label">Fechas</label>
+										<label class="col-md-4 col-form-label d-block text-nowrap">Fechas</label>
 										<div class="col-md-8">
 											<div class="row row-space-10">
-												<div class="col-xs-6">
+												<div class="col-6">
 													<input type="text" class="form-control" id="datetimepicker3" placeholder="De:" />
 												</div>
-												<div class="col-xs-6">
+												<div class="col-6">
 													<input type="text" class="form-control" id="datetimepicker4" placeholder="A:" />
 												</div>
 											</div>
@@ -64,7 +64,7 @@
 								</div>
 								<div class="col col-sm-12 col-md-4">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3">Turno</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Turno</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">Primero</option>
@@ -76,7 +76,7 @@
 								</div>
 								<div class="col col-sm-12 col-md-4">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3">Complejo</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Complejo</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">EUA</option>
@@ -90,7 +90,7 @@
 							<div class="row">
 								<div class="col col-sm-12 col-md-3">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3">Planta</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Planta</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">Guadalajar</option>
@@ -102,7 +102,7 @@
 								</div>
 								<div class="col col-sm-12 col-md-3">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3">Área</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Área</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">Alimentos</option>
@@ -113,7 +113,7 @@
 								</div>
 								<div class="col col-sm-12 col-md-3">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3">Línea</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Línea</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">Termoformado</option>
@@ -125,7 +125,7 @@
 								</div>
 								<div class="col col-sm-12 col-md-3">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3">Máqiona</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Máqiona</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">Máquina 1</option>
