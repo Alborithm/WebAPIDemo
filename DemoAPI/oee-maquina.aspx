@@ -10,26 +10,9 @@
 	<link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
 	<!-- ================== END PAGE CSS STYLE ================== -->
 
-	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-	<link href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
-	<link href="../assets/plugins/ionRangeSlider/css/ion.rangeSlider.css" rel="stylesheet" />
-	<link href="../assets/plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/password-indicator/css/password-indicator.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-combobox/css/bootstrap-combobox.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
-	<link href="../assets/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
-	<link href="../assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+	<!-- ================== BEGIN PAGE DATETIMEPICKER STYLE ================== -->
 	<link href="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css" rel="stylesheet" />
-	<link href="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.css" rel="stylesheet" />
-	<link href="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker-fontawesome.css" rel="stylesheet" />
-	<link href="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker-glyphicons.css" rel="stylesheet" />
-	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	<!-- ================== END PAGE DATETIMEPICKER STYLE ================== -->
 
 	<style type="text/css">
 		#gaudeOEEValue {
@@ -132,7 +115,7 @@
 										<label class="col-form-label col-md-3 d-block text-nowrap">Planta</label>
 										<div class="col-md-9">
 											<select class="form-control">
-												<option value="1">Guadalajar</option>
+												<option value="1">Guadalajara</option>
 												<option value="2">Monterrey</option>
 												<option value="3">San Luis Potosí</option>
 											</select>
@@ -164,7 +147,7 @@
 								</div>
 								<div class="col col-sm-12 col-md-3">
 									<div class="form-group row align-middle">
-										<label class="col-form-label col-md-3 d-block text-nowrap">Máqiona</label>
+										<label class="col-form-label col-md-3 d-block text-nowrap">Máquina</label>
 										<div class="col-md-9">
 											<select class="form-control">
 												<option value="1">Máquina 1</option>
@@ -253,36 +236,20 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptFooter" runat="server">
+	<!-- ================== BEGIN PAGE GAUGE TACOMETRO JS ================== -->
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/globalization/globalize.js"></script>
+	<!-- ================== END PAGE GAUGE TACOMETRO JS ================== -->
 
-	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	<script src="../assets/plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
-	<script src="../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-	<script src="../assets/plugins/masked-input/masked-input.min.js"></script>
-	<script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-	<script src="../assets/plugins/password-indicator/js/password-indicator.js"></script>
-	<script src="../assets/plugins/bootstrap-combobox/js/bootstrap-combobox.js"></script>
-	<script src="../assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-	<script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-	<script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.js"></script>
-	<script src="../assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+	<!-- ================== BEGIN PAGE DATETIMEPICKER JS ================== -->
 	<script src="../assets/plugins/bootstrap-daterangepicker/moment.js"></script>
-	<script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<script src="../assets/plugins/select2/dist/js/select2.min.js"></script>
 	<script src="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="../assets/plugins/bootstrap-show-password/bootstrap-show-password.js"></script>
-	<script src="../assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-	<script src="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.js"></script>
-	<script src="../assets/plugins/clipboard/clipboard.min.js"></script>
-	<script src="../assets/js/demo/form-plugins.demo.min.js"></script>
-	<!-- ================== END PAGE LEVEL JS ================== -->
+	<!-- ================== END PAGE DATETIMEPICKER JS ================== -->
 
-	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<!-- ================== BEGIN PAGE CHART JS ================== -->
 	<script src="../assets/plugins/morris/raphael.min.js"></script>
 	<script src="../assets/plugins/morris/morris.js"></script>
-	<!-- ================== END PAGE LEVEL JS ================== -->
+	<!-- ================== END PAGE CHART JS ================== -->
 
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -408,8 +375,22 @@
 			});
 		}
 		$(document).ready(function () {
-			FormPlugins.init();
+			handleDateTimePicker();
 		});
+		var handleDateTimePicker = function () {
+			$('#datetimepicker3').datetimepicker({
+				format: 'DD-MM-YYYY'
+			});
+			$('#datetimepicker4').datetimepicker({
+				format: 'DD-MM-YYYY'
+			});
+			$("#datetimepicker3").on("dp.change", function (e) {
+				$('#datetimepicker4').data("DateTimePicker").minDate(e.date);
+			});
+			$("#datetimepicker4").on("dp.change", function (e) {
+				$('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
+			});
+		};
 	</script>
 
 </asp:Content>
