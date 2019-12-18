@@ -9,6 +9,28 @@
 	<!-- ================== BEGIN PAGE CSS STYLE ================== -->
 	<link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
 	<!-- ================== END PAGE CSS STYLE ================== -->
+
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
+	<link href="../assets/plugins/ionRangeSlider/css/ion.rangeSlider.css" rel="stylesheet" />
+	<link href="../assets/plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/password-indicator/css/password-indicator.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-combobox/css/bootstrap-combobox.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+	<link href="../assets/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+	<link href="../assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css" rel="stylesheet" />
+	<link href="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.css" rel="stylesheet" />
+	<link href="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker-fontawesome.css" rel="stylesheet" />
+	<link href="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker-glyphicons.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+
 	<style type="text/css">
 		#gaudeOEEValue {
 			background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafafa), color-stop(100%, #f3f3f3));
@@ -53,6 +75,116 @@
 	<!-- end page-header -->
 
 	<div class="row">
+		<div class="col col-12">
+			<div id="accordion" class="card-accordion">
+				<!-- begin card -->
+				<div class="card">
+					<div class="card-header bg-black text-white pointer-cursor collapsed" data-toggle="collapse" data-target="#collapseOne">
+						Filtros						
+					</div>
+					<div id="collapseOne" class="collapse" data-parent="#accordion">
+						<div class="card-body">
+
+							<div class="row">
+								<div class="col col-sm-12 col-md-4">
+									<div class="form-group row align-middle">
+										<label class="col-md-4 col-form-label">Fechas</label>
+										<div class="col-md-8">
+											<div class="row row-space-10">
+												<div class="col-xs-6">
+													<input type="text" class="form-control" id="datetimepicker3" placeholder="De:" />
+												</div>
+												<div class="col-xs-6">
+													<input type="text" class="form-control" id="datetimepicker4" placeholder="A:" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-4">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3">Turno</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Primero</option>
+												<option value="2">Segundo</option>
+												<option value="3">Tercero</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-4">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3">Complejo</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">EUA</option>
+												<option value="2">MX</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col col-sm-12 col-md-3">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3">Planta</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Guadalajar</option>
+												<option value="2">Monterrey</option>
+												<option value="3">San Luis Potosí</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-3">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3">Área</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Alimentos</option>
+												<option value="2">Termoformado</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-3">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3">Línea</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Termoformado</option>
+												<option value="2">Etiquetado</option>
+												<option value="3">Empaque</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-3">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3">Máqiona</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Máquina 1</option>
+												<option value="2">Máquina 2</option>
+												<option value="3">Máquina 3</option>
+												<option value="4">Máquina 4</option>
+												<option value="5">Máquina 5</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
 			<div class="panel panel-inverse text-center align-middle" data-sortable-id="index-1">
 				<div class="panel-heading">
@@ -68,7 +200,11 @@
 				<div class="panel-heading">
 					<h4 class="panel-title">Disponibilidad</h4>
 				</div>
+				<a href="disponibilidad-maquina.aspx">
+					<div>
 				<div id="gaudeDisponibilidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+						</div>
+					</a>
 				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeDisponibilidadValue"></div>
 			</div>
 		</div>
@@ -119,6 +255,29 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptFooter" runat="server">
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/globalization/globalize.js"></script>
+
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="../assets/plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+	<script src="../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script src="../assets/plugins/masked-input/masked-input.min.js"></script>
+	<script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+	<script src="../assets/plugins/password-indicator/js/password-indicator.js"></script>
+	<script src="../assets/plugins/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+	<script src="../assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.js"></script>
+	<script src="../assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+	<script src="../assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+	<script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="../assets/plugins/select2/dist/js/select2.min.js"></script>
+	<script src="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="../assets/plugins/bootstrap-show-password/bootstrap-show-password.js"></script>
+	<script src="../assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+	<script src="../assets/plugins/jquery-simplecolorpicker/jquery.simplecolorpicker.js"></script>
+	<script src="../assets/plugins/clipboard/clipboard.min.js"></script>
+	<script src="../assets/js/demo/form-plugins.demo.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 	<script src="../assets/plugins/morris/raphael.min.js"></script>
@@ -248,6 +407,9 @@
 				lineColors: ['#1BE327', '#E3451B', '#2B9DEC']
 			});
 		}
+		$(document).ready(function () {
+			FormPlugins.init();
+		});
 	</script>
 
 </asp:Content>
