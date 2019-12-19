@@ -1,49 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout.Master" AutoEventWireup="true" CodeBehind="oee-maquina.aspx.cs" Inherits="DemoAPI.oee_maquina" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+	<!-- ================== BEGIN PAGE GAUGE TACOMETRO JS ================== -->
 	<link rel="stylesheet" href="https://www.jqwidgets.com/public/jqwidgets/styles/jqx.base.css" type="text/css" />
 	<link rel="stylesheet" href="https://www.jqwidgets.com/public/jqwidgets/styles/jqx.energyblue.css" type="text/css" />
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
 	<script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/globalization/globalize.js"></script>
 	<link rel="stylesheet" href="https://www.jqwidgets.com/public/jqwidgets/styles/jqx.arctic.css" type="text/css" />
-	<!-- ================== BEGIN PAGE CSS STYLE ================== -->
+	<!-- ================== END PAGE GAUGE TACOMETRO JS ================== -->
+
+	<!-- ================== BEGIN PAGE CHARTS CSS STYLE ================== -->
 	<link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
-	<!-- ================== END PAGE CSS STYLE ================== -->
+	<!-- ================== END PAGE CHARTS CSS STYLE ================== -->
 
 	<!-- ================== BEGIN PAGE DATETIMEPICKER STYLE ================== -->
 	<link href="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 	<!-- ================== END PAGE DATETIMEPICKER STYLE ================== -->
 
-	<style type="text/css">
-		#gaudeOEEValue {
-			background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafafa), color-stop(100%, #f3f3f3));
-			background-image: -webkit-linear-gradient(#fafafa, #f3f3f3);
-			background-image: -moz-linear-gradient(#fafafa, #f3f3f3);
-			background-image: -o-linear-gradient(#fafafa, #f3f3f3);
-			background-image: -ms-linear-gradient(#fafafa, #f3f3f3);
-			background-image: linear-gradient(#fafafa, #f3f3f3);
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			-ms-border-radius: 3px;
-			-o-border-radius: 3px;
-			border-radius: 3px;
-			-webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-			-moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-			box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-			padding: 10px;
-			width: 150px;
-		}
-
-		.gaudeValue {
-			position: absolute;
-			top: 235px;
-			left: 132px;
-			font-family: Sans-Serif;
-			text-align: center;
-			font-size: 17px;
-			width: 70px;
-		}
-	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -57,19 +31,7 @@
 	<h1 class="page-header">Máquina 1 <small>Descripción</small></h1>
 	<!-- end page-header -->
 
-	<div class="row">
-		<div class="col col-12">
-			<div id="accordion" class="card-accordion">
-				<!-- begin card -->
-				<div class="card">
-					<div class="card-header bg-black text-white pointer-cursor collapsed" data-toggle="collapse" data-target="#collapseOne">
-						Filtros						
-					</div>
-					<div id="collapseOne" class="collapse" data-parent="#accordion">
-						<div class="card-body">
-
-							<div class="row">
-								<div class="col col-sm-12 col-md-4">
+	<!--div class="col col-sm-12 col-md-4">
 									<div class="form-group row align-middle">
 										<label class="col-md-4 col-form-label d-block text-nowrap">Fechas</label>
 										<div class="col-md-8">
@@ -95,8 +57,20 @@
 											</select>
 										</div>
 									</div>
-								</div>
-								<div class="col col-sm-12 col-md-4">
+								</div-->
+
+	<div class="row">
+		<div class="col col-12">
+			<div id="accordion" class="card-accordion">
+				<!-- begin card -->
+				<div class="card">
+					<div class="card-header bg-black text-white pointer-cursor collapsed" data-toggle="collapse" data-target="#collapseOne">
+						Filtros						
+					</div>
+					<div id="collapseOne" class="collapse" data-parent="#accordion">
+						<div class="card-body">
+							<div class="row">
+								<div class="col col-sm-12 col-md-2">
 									<div class="form-group row align-middle">
 										<label class="col-form-label col-md-3 d-block text-nowrap">Complejo</label>
 										<div class="col-md-9">
@@ -107,10 +81,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
-
-							<div class="row">
-								<div class="col col-sm-12 col-md-3">
+								<div class="col col-sm-12 col-md-2">
 									<div class="form-group row align-middle">
 										<label class="col-form-label col-md-3 d-block text-nowrap">Planta</label>
 										<div class="col-md-9">
@@ -122,7 +93,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col col-sm-12 col-md-3">
+								<div class="col col-sm-12 col-md-2">
 									<div class="form-group row align-middle">
 										<label class="col-form-label col-md-3 d-block text-nowrap">Área</label>
 										<div class="col-md-9">
@@ -133,7 +104,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col col-sm-12 col-md-3">
+								<div class="col col-sm-12 col-md-2">
 									<div class="form-group row align-middle">
 										<label class="col-form-label col-md-3 d-block text-nowrap">Línea</label>
 										<div class="col-md-9">
@@ -145,7 +116,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col col-sm-12 col-md-3">
+								<div class="col col-sm-12 col-md-4">
 									<div class="form-group row align-middle">
 										<label class="col-form-label col-md-3 d-block text-nowrap">Máquina</label>
 										<div class="col-md-9">
@@ -167,6 +138,7 @@
 		</div>
 	</div>
 
+
 	<div class="row">
 		<div class="col col-sm-12 col-md-6 col-lg-3 text-center align-middle">
 			<div class="panel panel-inverse text-center align-middle" data-sortable-id="index-1">
@@ -185,9 +157,9 @@
 				</div>
 				<a href="disponibilidad-maquina.aspx">
 					<div>
-				<div id="gaudeDisponibilidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
-						</div>
-					</a>
+						<div id="gaudeDisponibilidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+					</div>
+				</a>
 				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeDisponibilidadValue"></div>
 			</div>
 		</div>
@@ -196,7 +168,11 @@
 				<div class="panel-heading">
 					<h4 class="panel-title">Velocidad</h4>
 				</div>
-				<div id="gaudeVelocidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+				<a href="velocidad-maquina.aspx">
+					<div>
+						<div id="gaudeVelocidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+					</div>
+				</a>
 				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaudeVelocidadValue"></div>
 			</div>
 		</div>
@@ -205,7 +181,11 @@
 				<div class="panel-heading">
 					<h4 class="panel-title">Calidad</h4>
 				</div>
-				<div id="gaugeCalidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+				<a href="calidad-maquina.aspx">
+					<div>
+						<div id="gaugeCalidad" class="bg-black text-center align-middle" style="margin: 0 auto;"></div>
+					</div>
+				</a>
 				<div class="list-group-item list-group-item-inverse text-ellipsis text-center align-middle" id="gaugeCalidadValue"></div>
 			</div>
 		</div>
@@ -374,6 +354,7 @@
 				lineColors: ['#1BE327', '#E3451B', '#2B9DEC']
 			});
 		}
+		/*
 		$(document).ready(function () {
 			handleDateTimePicker();
 		});
@@ -391,6 +372,7 @@
 				$('#datetimepicker3').data("DateTimePicker").maxDate(e.date);
 			});
 		};
+		*/
 	</script>
 
 </asp:Content>

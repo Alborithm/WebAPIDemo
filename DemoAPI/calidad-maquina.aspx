@@ -1,21 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout.Master" AutoEventWireup="true" CodeBehind="disponibilidad-maquina.aspx.cs" Inherits="DemoAPI.disponibilidad_maquina" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout.Master" AutoEventWireup="true" CodeBehind="calidad-maquina.aspx.cs" Inherits="DemoAPI.calidad_maquina" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<!-- ================== BEGIN PAGE DATETIMEPICKER STYLE ================== -->
-	<link href="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-	<!-- ================== END PAGE DATETIMEPICKER STYLE ================== -->
+	<!-- ================== BEGIN PAGE CHARTS CSS STYLE ================== -->
+	<link href="../assets/plugins/morris/morris.css" rel="stylesheet" />
+	<!-- ================== END PAGE CHARTS CSS STYLE ================== -->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
 	<!-- begin breadcrumb -->
 	<ol class="breadcrumb pull-right">
 		<li class="breadcrumb-item"><a href="dashboard.aspx">Dashboard</a></li>
 		<li class="breadcrumb-item"><a href="oee-maquina.aspx">Máquina</a></li>
-		<li class="breadcrumb-item active">Disponibilidad</li>
+		<li class="breadcrumb-item active">Calidad</li>
 	</ol>
 	<!-- end breadcrumb -->
 	<!-- begin page-header -->
-	<h1 class="page-header">Disponibilidad <small>Máquina 1</small></h1>
+	<h1 class="page-header">Calidad <small>Máquina 1</small></h1>
 	<!-- end page-header -->
 
 	<div class="row">
@@ -98,7 +97,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col col-sm-12 col-md-12">
+		<div class="col col-sm-12 col-md-5">
 			<!-- begin panel -->
 			<div class="panel panel-inverse">
 				<div class="panel-heading">
@@ -108,18 +107,28 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 					</div-->
-					<h4 class="panel-title">Tiempo muertos</h4>
+					<h4 class="panel-title">Producción</h4>
 				</div>
-				<div class="panel-body">
-					<h4 class="text-center">Paros Máquina 1</h4>
-					<canvas id="canvas" height="100"></canvas>
+				<div class="panel-body text-left align-middle">
+					<!--h4 class="text-center">Paros Máquina 1</h4-->
+					<canvas id="canvas"></canvas>
+
+					<div class="note note-secondary m-b-15">
+						<p>
+							<b>Pruducción total: </b> 3,400 Piezas
+							<br />
+							<b>Pruducción buena (73.53 %): </b> 2,500 Piezas
+							<br />
+							<b>Pruducción mala (26.47 %): </b> 900 Piezas
+						</p>
+					</div>
+
 				</div>
 			</div>
 			<!-- end panel -->
 		</div>
-	</div>
-	<div class="row">
-		<div class="col col-sm-12 col-md-12">
+
+		<div class="col col-sm-12 col-md-7">
 			<!-- begin panel -->
 			<div class="panel panel-inverse">
 				<div class="panel-heading">
@@ -129,33 +138,42 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 					</div-->
-					<h4 class="panel-title">Frecuencia de paros</h4>
+					<h4 class="panel-title">Desperdicio</h4>
 				</div>
 				<div class="panel-body">
-					<h4 class="text-center">Máquina 1</h4>
-					<canvas id="canvasBarHorizontal" height="50"></canvas>
+					<h4 class="text-center">Causas de deperdicio</h4>
+					<canvas id="canvasDesperdicio" height="100"></canvas>
 				</div>
 			</div>
 			<!-- end panel -->
 		</div>
 	</div>
+
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptFooter" runat="server">
-
-	<!-- ================== BEGIN PAGE DATETIMEPICKER JS ================== -->
-	<script src="../assets/plugins/bootstrap-daterangepicker/moment.js"></script>
-	<script src="../assets/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	<!-- ================== END PAGE DATETIMEPICKER JS ================== -->
-
 	<!-- ================== BEGIN PAGE CHART JS ================== -->
 	<script src="../assets/plugins/chart-js/Chart.min.js"></script>
-	<script src="../assets/js/demo/chart-js.demo.min.js"></script>
 	<!-- ================== END PAGE CHART JS ================== -->
+	<script type="text/javascript">
+		//3400
+		var barChartData = {
+			labels: ['Buena', 'Mala'],
+			datasets: [{
+				label: 'Piezas',
+				backgroundColor: ['#58ceb1', '#ec2121'],
+				borderColor: ['#58ceb1', '#ec2121'],
+				borderWidth: 1,
+				data: [
+					2500,
+					900
+				]
+			}]
 
-	<script>
+		};
+
 		var chartData = {
-			labels: ['Falta de material', 'Falla en el equipo', 'Problema de calidad', 'Preparación - Ajustes de la máquina', 'Ausentismo'],
+			labels: ['Problema de calidad', 'Deforme', 'Arracque de máquina'],
 			datasets: [{
 				type: 'line',
 				label: '%',
@@ -163,23 +181,20 @@
 				borderWidth: 0,
 				fill: false,
 				data: [
-					37.5,
-					37.5 + 25,
-					37.5 + 25 + 21.875,
-					37.5 + 25 + 21.875 + 9.375,
-					37.5 + 25 + 21.875 + 9.375 + 6.25
+					55.56,
+					55.56 + 33.33,
+					55.56 + 33.33 + 11.11
+
 				],
 				yAxisID: 'y-axis-2'
 			}, {
 				type: 'bar',
-				label: 'Minutos',
-				backgroundColor: COLOR_BLUE,
+				label: 'Piezas',
+				backgroundColor: "#8bb8f1",
 				data: [
-					60,
-					40,
-					35,
-					15,
-					10
+					500,
+					300,
+					100
 				],
 				borderColor: 'white',
 				borderWidth: 2
@@ -187,24 +202,54 @@
 
 		};
 
-		var horizontalBarChartData = {
-			labels: ['Falla en el equipo', 'Problema de calidad', 'Falta de material', 'Preparación - Ajustes de la máquina', 'Ausentismo'],
-			datasets: [{
-				label: 'Paros',
-				backgroundColor: "#8bb8f1",
-				borderColor: "#2f80e7",
-				borderWidth: 1,
-				data: [
-					4, 3, 2, 1, 1
-				]
-			}]
-
-		};
-
 		window.onload = function () {
 			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					responsive: true,
+					min: 0,
+					tooltips: {
+						mode: 'label'
+					},
+					legend: {
+						display: false,
+						labels: {
+							boxWidth: 50,
+							fontSize: 10,
+							fontColor: '#bbb',
+							padding: 5,
+						}
+					},
+					scales: {
+						yAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'Piezas'
+							},
+							ticks: {
+								//steps: 1,
+								//stepValue: 1,
+								//stepSize: 1,
+								beginAtZero: true,
+								min: 0,
+								//max: 100
+							}
+						}]
+					},
+					title: {
+						display: true,
+						text: 'Producción'
+					}
+				}
+			});
+
+
+			var ctx2 = document.getElementById('canvasDesperdicio').getContext('2d');
 			//ctx.height = 600;
-			window.myMixedChart = new Chart(ctx, {
+			window.myMixedChart = new Chart(ctx2, {
 				type: 'bar',
 				data: chartData,
 				options: {
@@ -228,12 +273,12 @@
 							display: true,
 							scaleLabel: {
 								display: true,
-								labelString: 'Minutos'
+								labelString: 'Piezas'
 							},
 							ticks: {
 								//steps: 1,
 								//stepValue: 1,
-								stepSize: 5,
+								//stepSize: 5,
 								beginAtZero: true,
 								min: 0,
 								//max: 100
@@ -255,61 +300,12 @@
 						}]
 					},
 					title: {
-						display: true,
-						text: 'Tiempos muertos'
+						display: false,
+						text: 'Desperdicio'
 					}
 				}
 			});
 
-			//bar horizontal
-			ctx = document.getElementById('canvasBarHorizontal').getContext('2d');
-			ctx.height = 50;
-			window.myHorizontalBar = new Chart(ctx, {
-				type: 'horizontalBar',
-				data: horizontalBarChartData,
-				options: {
-					// Elements options apply to all of the options unless overridden in a dataset
-					// In this case, we are setting the border of each horizontal bar to be 2px wide
-					elements: {
-						rectangle: {
-							borderWidth: 2,
-						}
-					},
-					maintainAspectRatio: true,
-					responsive: true,
-					min: 0,
-					tooltips: {
-						mode: 'label'
-					},
-					legend: {
-						display: false,
-						labels: {
-							boxWidth: 50,
-							fontSize: 10,
-							fontColor: '#bbb',
-							padding: 5,
-						}
-					},
-					scales: {
-						xAxes: [{
-							display: true,
-							scaleLabel: {
-								display: true,
-								labelString: 'No. De eventos'
-							},
-							ticks: {
-								stepSize: 1,
-								beginAtZero: true,
-								min: 0,
-							}
-						}]
-					},
-					title: {
-						display: false,
-						text: 'No. De eventos'
-					}
-				}
-			});
 		};
 	</script>
 </asp:Content>

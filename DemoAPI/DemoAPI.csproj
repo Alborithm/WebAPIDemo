@@ -161,6 +161,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="calidad-maquina.aspx.cs">
+      <DependentUpon>calidad-maquina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="calidad-maquina.aspx.designer.cs">
+      <DependentUpon>calidad-maquina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OeeController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
@@ -172,6 +179,13 @@
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="datos-maestros.aspx.cs">
+      <DependentUpon>datos-maestros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datos-maestros.aspx.designer.cs">
+      <DependentUpon>datos-maestros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="disponibilidad-maquina.aspx.cs">
       <DependentUpon>disponibilidad-maquina.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -181,6 +195,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="layout.Master.cs">
       <DependentUpon>layout.Master</DependentUpon>
@@ -200,6 +221,13 @@
       <DependentUpon>oee-maquina.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="velocidad-maquina.aspx.cs">
+      <DependentUpon>velocidad-maquina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="velocidad-maquina.aspx.designer.cs">
+      <DependentUpon>velocidad-maquina.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -6435,6 +6463,7 @@
     <Content Include="assets\scss\transparent\images\transparent\white-0.8.png" />
     <Content Include="assets\scss\transparent\images\transparent\white-0.9.png" />
     <Content Include="assets\scss\transparent\images\transparent\white-0.98.png" />
+    <Content Include="calidad-maquina.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -6442,6 +6471,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="dashboard.aspx" />
+    <Content Include="datos-maestros.aspx" />
     <Content Include="disponibilidad-maquina.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -6450,6 +6480,7 @@
     <Content Include="img\maq3.jpg" />
     <Content Include="img\maq4.jpg" />
     <Content Include="img\maq5.jpg" />
+    <Content Include="index.aspx" />
     <Content Include="oee-maquina.aspx" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
@@ -8453,6 +8484,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="velocidad-maquina.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

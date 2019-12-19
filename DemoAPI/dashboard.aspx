@@ -10,10 +10,90 @@
 	</ol>
 	<!-- end breadcrumb -->
 	<!-- begin page-header -->
-	<h1 class="page-header">Dashboard <small>Producción actual</small></h1>
+	<h1 class="page-header">Dashboard <small>Layout</small></h1>
 	<!-- end page-header -->
 
 	<!-- begin row -->
+
+	<div class="row">
+		<div class="col col-12">
+			<div id="accordion" class="card-accordion">
+				<!-- begin card -->
+				<div class="card">
+					<div class="card-header bg-black text-white pointer-cursor collapsed" data-toggle="collapse" data-target="#collapseOne">
+						Filtros						
+					</div>
+					<div id="collapseOne" class="collapse" data-parent="#accordion">
+						<div class="card-body">
+							<div class="row">
+								<div class="col col-sm-12 col-md-2">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3 d-block text-nowrap">Complejo</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">EUA</option>
+												<option value="2">MX</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-2">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3 d-block text-nowrap">Planta</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Guadalajara</option>
+												<option value="2">Monterrey</option>
+												<option value="3">San Luis Potosí</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-2">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3 d-block text-nowrap">Área</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Alimentos</option>
+												<option value="2">Termoformado</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-2">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3 d-block text-nowrap">Línea</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Termoformado</option>
+												<option value="2">Etiquetado</option>
+												<option value="3">Empaque</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col col-sm-12 col-md-4">
+									<div class="form-group row align-middle">
+										<label class="col-form-label col-md-3 d-block text-nowrap">Máquina</label>
+										<div class="col-md-9">
+											<select class="form-control">
+												<option value="1">Máquina 1</option>
+												<option value="2">Máquina 2</option>
+												<option value="3">Máquina 3</option>
+												<option value="4">Máquina 4</option>
+												<option value="5">Máquina 5</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<div class="row">
 		<!-- begin col -->
