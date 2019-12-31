@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ITMDBConnection.Models.AllView>
+
+@{
+    ViewBag.Title = "AllEquipment";
+}
+
+<h2>AllEquipment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GetTableName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MachinePower)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FailCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QualityDefects)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeUpdated)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GetTableName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MachinePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FailCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductionQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QualityDefects)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeUpdated)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="row" style="grid-row-gap: 2em">
+    @{
+        int i = 0;
+    }
+
+    @foreach (var item in Model)
+    {
+        var style = (item.MachinePower == true) ? "background-color:green" : "background-color:red";
+        <div class="col-xs-5 col-xs-offset-1" style="border:double; @style">
+            <div style="text-align:center;">
+                <p>Numero de operación: @Html.DisplayFor(modelItem => item.OperationID)</p>
+                <p>Estado de máquina: @Html.DisplayFor(modelItem => item.MachinePower)</p>
+                <p>Codigo de falla: @Html.DisplayFor(modelItem => item.FailCode)    </p>
+                <p>Produción del turno: @Html.DisplayFor(modelItem => item.ProductionQuantity)</p>
+                <p>Cantidad de defectos: @Html.DisplayFor(modelItem => item.QualityDefects)</p>
+                <p>Ultima Actualización: @Html.DisplayFor(modelItem => item.TimeUpdated)</p>
+            </div>
+        </div>
+        if (i % 2 == 1)
+        {
+            // temporal solution
+            <p>.</p>
+        }
+        i++;
+    }
+</div>
+

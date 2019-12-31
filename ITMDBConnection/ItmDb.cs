@@ -26,7 +26,7 @@ namespace ITMDBConnection
         // Initialize values
         private void Initialize()
         {
-            server = "192.168.100.91";
+            server = "187.189.192.199";
             database = "itmoeedb";
             uid = "itm";
             password = "ThemuffinMan531";

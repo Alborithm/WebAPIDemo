@@ -481,6 +481,27 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:DemoAPI.Controllers.OeeController.GetDisponibility(System.Int32)">
+            <summary>
+            Gets complete list of the equipment given in the parameter
+            </summary>
+            <param name="id">Id of the requested operation</param>
+            <returns></returns>
+        </member>
+        <member name="M:DemoAPI.Controllers.OeeController.GetMainViewData">
+            <summary>
+            Get a model to show data for the main view window, every equipment last data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DemoAPI.Controllers.OeeController.GetDisponibilityDateRange(System.String,System.String)">
+            <summary>
+            Get a list of all registers on disponibility from data range specified
+            </summary>
+            <param name="from"> start date in format YYMMDD</param>
+            <param name="to"> finish date in format YYMMDD</param>
+            <returns></returns>
+        </member>
         <member name="T:DemoAPI.Controllers.PeopleController">
             <summary>
             This is where I give you all the information about my people.
@@ -556,6 +577,15 @@
             Campo generado automáticamente.
             Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
             </remarks>
+        </member>
+        <member name="M:DemoAPI.Models.OeeReport.ReportBuilder.VelocityPercentage(System.Int32)">
+            <summary>
+            Gets the velocity percentage, it is done by obtaining the real production from mysql, divide this by the max production
+            which is obtained by giving a known rate on a period of time, this is multiplied by the disponibility percentage in order to
+            get effective velocity at running time.
+            </summary>
+            <param name="id">Operation Id to obtain data</param>
+            <returns>double value in percentage format, shouldn't be higher than 100</returns>
         </member>
         <member name="T:DemoAPI.Models.Person">
             <summary>
