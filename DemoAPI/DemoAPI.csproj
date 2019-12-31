@@ -196,6 +196,13 @@
     <Compile Include="disponibilidad-maquina.aspx.designer.cs">
       <DependentUpon>disponibilidad-maquina.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dm-maquinas.aspx.cs">
+      <DependentUpon>dm-maquinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dm-maquinas.aspx.designer.cs">
+      <DependentUpon>dm-maquinas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6484,6 +6491,7 @@
     <Content Include="dashboard.aspx" />
     <Content Include="datos-maestros.aspx" />
     <Content Include="disponibilidad-maquina.aspx" />
+    <Content Include="dm-maquinas.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -80,7 +80,7 @@
 					<p>5</p>
 				</div>
 				<div class="stats-link">
-					<a href="javascript:;">Ver <i class="fa fa-arrow-alt-circle-right"></i></a>
+					<a href="dm-maquinas.aspx">Ver <i class="fa fa-arrow-alt-circle-right"></i></a>
 				</div>
 			</div>
 		</div>
